@@ -302,7 +302,7 @@ body {
     visibility: visible;
     pointer-events: initial;
 
-    transition: opacity 250ms, visibility 250ms;
+    transition: opacity 250ms, visibility 250ms, cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -402,15 +402,15 @@ body {
     display: flex;
 }
 
-.portfolio-item {
-    position: relative;
-}
-
 .portfolio-item:not(:last-child) {
     margin-right: 30px;
 }
 
 .portfolio-overlay {
+    position: relative;
+}
+
+.portfolio-desc {
     display: flex;
     position: absolute;
     bottom: 0;
@@ -420,14 +420,11 @@ body {
     align-items: center;
     justify-content: center;
 
-    background: rgba(47, 48, 58, 0.8);
-}
-
-.portfolio-desc {
     font-size: 14px;
     text-transform: uppercase;
 
     color: var(--white-color);
+    background-color: rgba(47, 48, 58, 0.8);
 }
 
 /* SECTION-4 */
@@ -532,15 +529,7 @@ body {
     border: 1px solid #AFB1B8;
     border-radius: 4px;
 
-    transition-property: border;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.customer-icon {
-    fill: currentColor;
-
-    transition-property: fill;
+    transition-property: color, border-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -549,6 +538,14 @@ body {
 .customer-link:focus {
     color: var(--accent-color);
     border-color: var(--accent-color);
+}
+
+.customer-icon {
+    fill: currentColor;
+
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-link:hover .customer-icon.icon,
@@ -706,21 +703,21 @@ body {
     margin-right: 70px;
 }
 
-.footer-link.gps {
+.footer-link-gps {
     font-weight: 400;
-        font-size: 14px;
-        line-height: 1.71;
-        color: var(--white-color)
+    font-size: 14px;
+    line-height: 1.71;
+    color: var(--white-color)
 }
 
 .footer-link {
-        font-size: 14px;
-        line-height: 1.71;
-        color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    line-height: 1.71;
+    color: rgba(255, 255, 255, 0.6);
 
-        transition-property: color;
-        transition-duration: 250ms;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-address-list {
@@ -782,7 +779,7 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
 
-    transition-property: color, background-color;
+    transition-property: background-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -790,7 +787,6 @@ body {
 .footer-link-icon:hover,
 .footer-link-icon:focus {
     background-color: var(--accent-color);
-    color: var(--white-color);
 }
 
 .footer-icon {
