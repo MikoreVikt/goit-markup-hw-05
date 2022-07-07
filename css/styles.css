@@ -529,14 +529,13 @@ body {
     border: 1px solid #AFB1B8;
     border-radius: 4px;
 
-    transition-property: fill, color, border-color;
+    transition-property: border-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-link:hover,
 .customer-link:focus {
-    color: var(--accent-color);
     border-color: var(--accent-color);
 }
 
